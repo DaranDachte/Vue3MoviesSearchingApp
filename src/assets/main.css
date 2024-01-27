@@ -7,6 +7,20 @@
   font-family: 'Orbitron', sans-serif;
 }
 
+body {
+  background-image: url('src/assets/img/bg2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  overflow: auto;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+main {
+  max-width: 800px;
+  margin: auto;
+}
