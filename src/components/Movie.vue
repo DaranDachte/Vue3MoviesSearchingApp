@@ -11,10 +11,14 @@
       <teleport to="#modal-container">
         <div
           v-if="showModal"
-          class="flex flex-col items-center justify-center mt-[18rem] rounded fixed top-0 w-1/3 start-2/3 h-[10rem] z-10 bg-fuchsia-600"
+          class="flex flex-col items-center justify-center mt-[18rem] rounded fixed top-0 w-1/5 start-3/4 h-[15rem] z-10 bg-fuchsia-600/50"
         >
-          <div>Vote Average:{{ movie.vote_average }}</div>
-          <button @click="showModal = false">Close Modal</button>
+          <p>Popularity: {{ movie.popularity }}</p>
+          <p>Vote Average: {{ movie.vote_average }}</p>
+          <p>Vote count : {{ movie.vote_count }}</p>
+          <p>Original language: {{ movie.original_language }}</p>
+          <p class="text-center">Original Title: {{ movie.original_title }}</p>
+          <button class="mt-[1rem]" @click="showModal = false">Close Modal</button>
         </div>
       </teleport>
       <div class="movie-buttons" v-if="!isSearch">
