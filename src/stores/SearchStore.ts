@@ -1,9 +1,9 @@
-import { defineStore } from 'pinia'
-import { ref } from 'vue'
-import { useMovieStore } from './MovieStore'
-import type { Movie } from './MovieStore'
+import { defineStore } from 'pinia';
+import { ref } from 'vue';
+import { useMovieStore } from './MovieStore';
+import type { Movie } from './MovieStore';
 const url =
-  'https:api.themoviedb.org/3/search/movie?api_key=df6dc9d55e72d2a2695d17e7a79d1368&query='
+  'https://api.themoviedb.org/3/search/movie?api_key=df6dc9d55e72d2a2695d17e7a79d1368&query=';
 
 //Option Api
 /* export const useSearchStore = defineStore('searchStore', {
@@ -29,21 +29,21 @@ const url =
 
 //Composition API
 export const useSearchStore = defineStore('searchStore', () => {
-  const loader = ref(false)
-  const movies = ref([])
+  const loader = ref(false);
+  const movies = ref([]);
   const getMovies = async (search: string) => {
-    loader.value = true
-    const res = await fetch(`${url}${search}`)
-    const data = await res.json()
-    movies.value = data.results
-    loader.value = false
-  }
+    loader.value = true;
+    const res = await fetch(`${url}${search}`);
+    const data = await res.json();
+    movies.value = data.results;
+    loader.value = false;
+  };
 
   const addToUserMovies = (object: Movie) => {
-    const movieStore = useMovieStore()
-    movieStore.movies.push({ ...object, isWatched: false })
-    movieStore.activeTab = 1
-  }
+    const movieStore = useMovieStore();
+    movieStore.movies.push({ ...object, isWatched: false });
+    movieStore.activeTab = 1;
+  };
 
-  return { getMovies, addToUserMovies, loader, movies }
-})
+  return { getMovies, addToUserMovies, loader, movies };
+});
