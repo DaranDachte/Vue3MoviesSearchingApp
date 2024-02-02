@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Movie from './components/Movie.vue';
 import Search from './components/Search.vue';
+
 //import { RouterLink, RouterView } from 'vue-router'
 import { useMovieStore } from './stores/MovieStore';
 
@@ -12,9 +13,7 @@ const setTab = (id: number) => {
 </script>
 
 <template>
-  <main
-    class="min-w-full min-h-full h-dvh bg-[url('src/assets/img/bg2.jpg')] bg-cover bg-no-repeat bg-fixed bg-center overflow-auto"
-  >
+  <main class="min-w-full min-h-full h-dvh backgroundImage">
     <div class="m-auto max-w-[50rem]">
       <header class="flex justify-center items-center mt-[2rem] p-5">
         <img src="./assets//img//MovieHeader.svg" alt="logo" class="mr-5 max-w-12" />
@@ -57,3 +56,14 @@ const setTab = (id: number) => {
     </div>
   </main>
 </template>
+
+<style scoped>
+.backgroundImage {
+  background-image: url('./assets/img/bg2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  overflow: auto;
+}
+</style>
