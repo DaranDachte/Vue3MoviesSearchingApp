@@ -2,8 +2,8 @@ import { defineStore } from 'pinia';
 import { ref } from 'vue';
 import { useMovieStore } from './MovieStore';
 import type { Movie } from './MovieStore';
-const url =
-  'https://api.themoviedb.org/3/search/movie?api_key=df6dc9d55e72d2a2695d17e7a79d1368&query=';
+const apiKey = import.meta.env.VITE_KEY;
+const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=`;
 
 //Option Api
 /* export const useSearchStore = defineStore('searchStore', {
